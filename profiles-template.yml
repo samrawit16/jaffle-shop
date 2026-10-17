@@ -1,0 +1,10 @@
+jaffle_shop_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: jaffle-shop-511913
+      dataset: jaffle_shop
+      threads: 4
+      location: US

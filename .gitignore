@@ -1,0 +1,9 @@
+target/
+dbt_packages/
+logs/
+*.env
+profiles.yml
+*gcp*.json
+service-account*.json
+__pycache__/
+.venv/
