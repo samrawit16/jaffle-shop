@@ -54,3 +54,11 @@ Run: `dbt seed --full-refresh && dbt build --exclude resource_type:seed`
   separate CI steps.
 - **YAML placement** — `sources.yml` in the project root was invisible to
   dbt; source declarations must live under `models/`.
+
+## Snapshots (SCD Type 2)
+
+`snapshots/snap_customers.sql` tracks customer status history with a check
+strategy on `status` (`unique_key=customer_id`, hard deletes invalidated).
+It derives status from order data, not the raw table. Note: BigQuery's free
+tier blocks DML, so running the snapshot requires a billed project — the
+code is compile-validated here.
