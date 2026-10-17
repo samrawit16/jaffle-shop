@@ -4,7 +4,7 @@ sources:
   - name: raw
     description: "Raw tables loaded from the jaffle shop app database"
     database: "{{ target.project }}"
-    schema: raw
+    schema: jaffle_shop_raw
     tables:
       - name: raw_customers
       - name: raw_orders

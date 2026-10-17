@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Customer dimension with RFM-style churn segmentation."
+    columns:
+      - name: customer_id
+        tests: [unique, not_null]
+      - name: churn_segment
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['never_activated', 'healthy', 'at_risk', 'churned']

@@ -16,3 +16,7 @@ models:
         +schema: finance
       customers:
         +schema: customers
+
+seeds:
+  jaffle_shop_analytics:
+    +schema: raw
