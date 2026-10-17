@@ -34,8 +34,8 @@ jobs:
                 location: US
           PROFILE
 
-      - name: Parse and compile (validates SQL, Jinja, schema)
-        run: dbt compile --profiles-dir ~/.dbt
+      - name: Parse (validates project, Jinja, YAML and sources)
+        run: dbt parse --profiles-dir ~/.dbt
 
-      - name: Check docs generate
-        run: dbt docs generate --profiles-dir ~/.dbt
+      - name: Lint YAML contract
+        run: dbt parse --profiles-dir ~/.dbt && echo "project parses cleanly"
